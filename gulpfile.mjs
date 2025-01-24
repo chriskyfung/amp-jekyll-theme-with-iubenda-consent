@@ -12,7 +12,7 @@ import AmpOptimizer from '@ampproject/toolbox-optimizer';
 const ampOptimizer = AmpOptimizer.create();
 
 function build(cb) {
-  return src('./_site/**/*.html')
+  return src(['./_site/**/*.html', '!./_site/**/iubenda-consent-page.html'])
     .pipe(
       through2.obj(async (file, _, cb) => {
         if (file.isBuffer()) {
