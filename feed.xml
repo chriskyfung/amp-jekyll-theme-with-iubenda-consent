@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/" rel="alternate" type="text/html" /><updated>2025-01-24T14:04:37+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml</id><title type="html">AMP Affiliately Jekyll Theme</title><subtitle>An AMP-ready Jekyll blog theme</subtitle><entry><title type="html">Introducing iubenda AMP Cookie Solution in Version 3.3.0</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/" rel="alternate" type="text/html" title="Introducing iubenda AMP Cookie Solution in Version 3.3.0" /><published>2025-01-23T17:01:00+08:00</published><updated>2025-01-23T17:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/"><![CDATA[<p>We’re excited to introduce a new consent banner option with the <a href="https://www.iubenda.com/en/help/22135-cookie-solution-amp-wordpress">iubenda AMP Cookie Solution</a> in version <code class="language-plaintext badge badge-success highlighter-rouge">3.3.0</code> of our Jekyll theme. This update integrates the iubenda AMP Cookie Solution, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/" rel="alternate" type="text/html" /><updated>2025-01-24T16:01:28+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml</id><title type="html">AMP Affiliately Jekyll Theme</title><subtitle>An AMP-ready Jekyll blog theme</subtitle><entry><title type="html">Introducing iubenda AMP Cookie Solution in Version 3.3.0</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/" rel="alternate" type="text/html" title="Introducing iubenda AMP Cookie Solution in Version 3.3.0" /><published>2025-01-23T17:01:00+08:00</published><updated>2025-01-23T17:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/"><![CDATA[<p>We’re excited to introduce a new consent banner option with the <a href="https://www.iubenda.com/en/help/22135-cookie-solution-amp-wordpress">iubenda AMP Cookie Solution</a> in version <code class="language-plaintext badge badge-success highlighter-rouge">3.3.0</code> of our Jekyll theme. This update integrates the iubenda AMP Cookie Solution, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.</p>
 
 <h2 id="key-benefits">Key Benefits</h2>
 
@@ -1311,7 +1311,7 @@
       </li>
       <li><a href="#footer-options" id="markdown-toc-footer-options">Footer Options</a></li>
       <li><a href="#cookie-consent" id="markdown-toc-cookie-consent">Cookie Consent</a>        <ul>
-          <li><a href="#simple-granular-user-consent-v29" id="markdown-toc-simple-granular-user-consent-v29">Simple Granular User Consent <span class="badge badge-success">v2.9</span></a></li>
+          <li><a href="#built-in-granular-user-consent-v29" id="markdown-toc-built-in-granular-user-consent-v29">Built-In Granular User Consent <span class="badge badge-success">v2.9</span></a></li>
           <li><a href="#iubenda-cookie-consent" id="markdown-toc-iubenda-cookie-consent">Iubenda Cookie Consent <span class="badge badge-success">v3.3</span></a></li>
         </ul>
       </li>
@@ -1784,7 +1784,7 @@ The following options provide the granular control to those menu items:</p>
   </tbody>
 </table>
 
-<h4 id="simple-granular-user-consent-v29">Simple Granular User Consent <span class="badge badge-success">v2.9</span></h4>
+<h4 id="built-in-granular-user-consent-v29">Built-In Granular User Consent <span class="badge badge-success">v2.9</span></h4>
 
 <p>A customizable consent UI developed using <code class="language-plaintext highlighter-rouge">amp-consent</code> and <code class="language-plaintext highlighter-rouge">amp-script</code> components. It enables granular consent control by categorizing cookies into essential, functional, analytics, and advertising. The UI features a preference modal, allowing users to efficiently manage their consent options per purpose.</p>
 
@@ -1838,9 +1838,19 @@ The following options provide the granular control to those menu items:</p>
   </thead>
   <tbody>
     <tr>
-      <td><code class="language-plaintext highlighter-rouge">iubentu</code></td>
+      <td><code class="language-plaintext highlighter-rouge">iubenda</code></td>
       <td> </td>
       <td> </td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">siteId</code></td>
+      <td>Your site’s unique ID code, used to share preferences among the same website/app.</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td><code class="language-plaintext highlighter-rouge">cookiePolicyId</code></td>
+      <td>Your cookie policy’s unique ID code, used to manage and customize the cookie banner/consent banner.</td>
     </tr>
     <tr>
       <td> </td>
