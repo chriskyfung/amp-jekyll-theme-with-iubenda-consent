@@ -31,6 +31,9 @@
       'domains': ['https://chriskyfung.github.io']
     });
     gtag('js', new Date());
+    gtag('set', 'page_location', window.parent.location.href || window.location.href);
+    gtag('set', 'page_referrer', window.parent.document.referrer || document.referrer);
+    gtag('set', 'page_title', window.parent.document.title || document.title);
     gtag('config', 'G-HP4LN87NJE', {
       'send_page_view': false
     });
