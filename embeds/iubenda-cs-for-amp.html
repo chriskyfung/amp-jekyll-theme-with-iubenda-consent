@@ -9,6 +9,10 @@
   <title>AMP Cookie Consent</title>
 
   <script>
+    // Enable consent mode TCF integration
+    window['gtag_enable_tcf_support'] = true;
+  </script>
+  <script>
     // Define dataLayer and the gtag function.
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -21,6 +25,16 @@
       'ad_personalization': 'denied',
       'analytics_storage': 'denied'
     });
+
+    //behavior specific for end-users in the US, AU, HK, SG
+    gtag('consent', 'default', {
+      'ad_storage': 'granted',
+      'ad_user_data': 'granted',
+      'ad_personalization': 'granted',
+      'analytics_storage': 'granted',
+      'region': ['US', 'AU', 'HK', 'SG']
+    });
+
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP4LN87NJE"></script>
@@ -51,8 +65,6 @@
       cookiePolicyId: 30443530, // Your own cookie policy ID
       enableTcf: true,
       askConsentIfCMPNotFound: true,
-      skipSaveConsent: true,
-      logLevel: 'debug',
       googleAdditionalConsentMode: true,
       googleAdsPreferenceManagement: true,
       floatingPreferencesButtonDisplay: false,

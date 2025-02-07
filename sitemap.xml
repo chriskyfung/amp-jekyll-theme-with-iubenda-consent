@@ -29,10 +29,6 @@
 <lastmod>2021-07-20T10:47:00+08:00</lastmod>
 </url>
 <url>
-<loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-guide/</loc>
-<lastmod>2025-01-22T17:01:00+08:00</lastmod>
-</url>
-<url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/post-processing/</loc>
 <lastmod>2025-01-22T17:01:00+08:00</lastmod>
 </url>
@@ -67,6 +63,10 @@
 <url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/built-in-granular-user-consentamp-consent/</loc>
 <lastmod>2025-01-31T09:01:00+08:00</lastmod>
+</url>
+<url>
+<loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-guide/</loc>
+<lastmod>2025-02-01T10:02:00+08:00</lastmod>
 </url>
 <url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/embeds/disqus-for-amp</loc>
@@ -123,9 +123,6 @@
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/config/</loc>
 </url>
 <url>
-<loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/front-matter/</loc>
-</url>
-<url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/plugin/</loc>
 </url>
 <url>
@@ -133,6 +130,9 @@
 </url>
 <url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/cms/</loc>
+</url>
+<url>
+<loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/front-matter/</loc>
 </url>
 <url>
 <loc>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/tag/vscode/</loc>
