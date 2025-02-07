@@ -25,16 +25,6 @@
       'ad_personalization': 'denied',
       'analytics_storage': 'denied'
     });
-
-    //behavior specific for end-users in the US, AU, HK, SG
-    gtag('consent', 'default', {
-      'ad_storage': 'granted',
-      'ad_user_data': 'granted',
-      'ad_personalization': 'granted',
-      'analytics_storage': 'granted',
-      'region': ['US', 'AU', 'HK', 'SG']
-    });
-
   </script>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP4LN87NJE"></script>
@@ -57,20 +47,16 @@
 <body class="iubenda-cookie-solution">
   <span class="iubenda-cs-preferences-link"></span>
   <script type="text/javascript">
-    const searchParams = new URLSearchParams(window.location.search);
-    const geo_groups = searchParams.get("groups");
-    const country_code = searchParams.get("country");
-    console.log("Geo groups: " + geo_groups);
-    console.log("Country code: " + country_code);
-
     var _iub = _iub || [];
     // Your own Privacy Controls and Cookie Solution configuration
     _iub.csConfiguration = {
       lang: 'en',
-      siteId: 3921623, // Your own site ID
-      cookiePolicyId: 27840875, // Your own cookie policy ID
+      siteId: 3904687, // Your own site ID
+      cookiePolicyId: 30443530, // Your own cookie policy ID
       enableTcf: true,
       askConsentIfCMPNotFound: true,
+      skipSaveConsent: true,
+      logLevel: 'debug',
       googleAdditionalConsentMode: true,
       googleAdsPreferenceManagement: true,
       floatingPreferencesButtonDisplay: false,
