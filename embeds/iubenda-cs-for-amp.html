@@ -9,11 +9,12 @@
   <title>AMP Cookie Consent</title>
 
   <script>
+    // Check if the user has opted out of the cookie consent banner
     const searchParams = new URLSearchParams(window.location.search);
-    const geo_groups = searchParams.get("groups");
-    const isOptIn = geo_groups !== "optout";
-    // Enable consent mode TCF integration based on regional consent preferences
-    window['gtag_enable_tcf_support'] = isOptIn;
+    const requiresOptInConsent = searchParams.get("optout") !== '1';
+
+    // Enable consent mode TCF integration
+    window['gtag_enable_tcf_support'] = true;
   </script>
   <script>
     // Define dataLayer and the gtag function.
@@ -55,6 +56,27 @@
       'send_page_view': false
     });
   </script>
+
+  <style>
+    #iubenda-cs-banner.iubenda-cs-center {
+        align-items: initial !important;
+    }
+
+    @media screen and (max-width: 688px) {
+        #iubenda-cs-banner .iubenda-granular-controls-container .granular-control-checkbox:first-child:nth-last-child(odd), #iubenda-cs-banner .iubenda-granular-controls-container .granular-control-checkbox:first-child:nth-last-child(odd)~.granular-control-checkbox {
+            justify-content: center;
+            flex-direction: row-reverse;
+        }
+    }
+
+    @media screen and (min-width: 640px) {
+        #iubenda-cs-paragraph [class^=iub] {
+            font-size: 100% !important;
+            line-height: 1.5 !important;
+            margin: .5em 0 !important;
+        }
+    }
+  </style>
 </head>
 
 <body class="iubenda-cookie-solution">
@@ -66,7 +88,7 @@
       lang: 'en',
       siteId: 3921623, // Your own site ID
       cookiePolicyId: 27840875, // Your own cookie policy ID
-      enableTcf: isOptIn,
+      enableTcf: true,
       askConsentIfCMPNotFound: true,
       googleAdditionalConsentMode: true,
       googleAdsPreferenceManagement: true,
@@ -87,7 +109,8 @@
       banner: {
         acceptButtonDisplay: true, // Recommended
         customizeButtonDisplay: true, // Recommended
-        rejectButtonDisplay: isOptIn // Advisable
+        rejectButtonDisplay: requiresOptInConsent, // Advisable
+        showPurposesToggles: requiresOptInConsent // Advisable
       }
     };
   </script>
