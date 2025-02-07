@@ -9,8 +9,11 @@
   <title>AMP Cookie Consent</title>
 
   <script>
-    // Enable consent mode TCF integration
-    window['gtag_enable_tcf_support'] = true;
+    const searchParams = new URLSearchParams(window.location.search);
+    const geo_groups = searchParams.get("groups");
+    const isOptIn = geo_groups !== "optout";
+    // Enable consent mode TCF integration based on regional consent preferences
+    window['gtag_enable_tcf_support'] = isOptIn;
   </script>
   <script>
     // Define dataLayer and the gtag function.
@@ -57,19 +60,13 @@
 <body class="iubenda-cookie-solution">
   <span class="iubenda-cs-preferences-link"></span>
   <script type="text/javascript">
-    const searchParams = new URLSearchParams(window.location.search);
-    const geo_groups = searchParams.get("groups");
-    const country_code = searchParams.get("country");
-    console.log("Geo groups: " + geo_groups);
-    console.log("Country code: " + country_code);
-
     var _iub = _iub || [];
     // Your own Privacy Controls and Cookie Solution configuration
     _iub.csConfiguration = {
       lang: 'en',
       siteId: 3921623, // Your own site ID
       cookiePolicyId: 27840875, // Your own cookie policy ID
-      enableTcf: true,
+      enableTcf: isOptIn,
       askConsentIfCMPNotFound: true,
       googleAdditionalConsentMode: true,
       googleAdsPreferenceManagement: true,
@@ -90,7 +87,7 @@
       banner: {
         acceptButtonDisplay: true, // Recommended
         customizeButtonDisplay: true, // Recommended
-        rejectButtonDisplay: true // Advisable
+        rejectButtonDisplay: isOptIn // Advisable
       }
     };
   </script>
