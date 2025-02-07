@@ -1,428 +1,288 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/" rel="alternate" type="text/html" /><updated>2025-02-07T14:18:31+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml</id><title type="html">AMP Affiliately Jekyll Theme</title><subtitle>An AMP-ready Jekyll blog theme</subtitle><entry><title type="html">Front Matter Guide</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-guide/" rel="alternate" type="text/html" title="Front Matter Guide" /><published>2025-02-01T10:02:00+08:00</published><updated>2025-02-01T10:02:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-guide/"><![CDATA[<aside style="position: relative;">
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.4">Jekyll</generator><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/" rel="alternate" type="text/html" /><updated>2025-02-07T14:31:36+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/feed.xml</id><title type="html">AMP Affiliately Jekyll Theme</title><subtitle>An AMP-ready Jekyll blog theme</subtitle><entry><title type="html">Verifying iubenda Cookie Solution on AMP Pages</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/verifying-iubenda-cookie-solution-amp/" rel="alternate" type="text/html" title="Verifying iubenda Cookie Solution on AMP Pages" /><published>2025-02-02T20:31:00+08:00</published><updated>2025-02-04T17:00:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/verifying-the-iubenda-cookie-solution</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/verifying-iubenda-cookie-solution-amp/"><![CDATA[<p>Ensuring that the <strong><a href="/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/">iubenda Cookie Solution</a></strong> functions correctly is crucial for maintaining compliance with privacy regulations and offering a seamless user experience on your website. By calling the browser and iubenda Cookie Solution’s API methods, you can verify its behavior and ensure that user consent is being handled correctly. This guide will talk you through the process step by step.</p>
+
+<aside style="position: relative;">
     <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
 </aside>
 
 <div id="toc">Table of Contents</div>
 
 <ul class="no_toc" id="markdown-toc">
-  <li><a href="#general-front-matters-for-a-post" id="markdown-toc-general-front-matters-for-a-post">General Front Matters for A Post</a></li>
-  <li><a href="#set-featured-image" id="markdown-toc-set-featured-image">Set Featured Image</a>    <ul>
-      <li><a href="#hide-featured-image-on-a-post" id="markdown-toc-hide-featured-image-on-a-post">Hide Featured Image on A Post</a></li>
-      <li><a href="#remove-box-shadow-from-featured-image" id="markdown-toc-remove-box-shadow-from-featured-image">Remove Box Shadow from Featured Image</a></li>
-      <li><a href="#featured-images-that-do-not-have-an-aspect-ratio-of-169" id="markdown-toc-featured-images-that-do-not-have-an-aspect-ratio-of-169">Featured Images That Do Not Have an Aspect Ratio of 16:9</a></li>
-      <li><a href="#show-thumbnail-image-in-sidebar-widgets" id="markdown-toc-show-thumbnail-image-in-sidebar-widgets">Show Thumbnail Image in Sidebar Widgets</a></li>
+  <li><a href="#step-by-step-guide" id="markdown-toc-step-by-step-guide">Step-by-Step Guide</a>    <ul>
+      <li><a href="#1-display-the-cookie-solution-iframe" id="markdown-toc-1-display-the-cookie-solution-iframe">1. Display the Cookie Solution iframe</a></li>
+      <li><a href="#2-open-browser-developer-tools" id="markdown-toc-2-open-browser-developer-tools">2. Open Browser Developer Tools</a></li>
+      <li><a href="#3-inspect-the-iframe-element" id="markdown-toc-3-inspect-the-iframe-element">3. Inspect the iframe Element</a></li>
+      <li><a href="#4-invoke-api-methods-from-the-console" id="markdown-toc-4-invoke-api-methods-from-the-console">4. Invoke API Methods from the Console</a></li>
     </ul>
   </li>
-  <li><a href="#pin-featured-posts" id="markdown-toc-pin-featured-posts">Pin Featured Posts</a></li>
-  <li><a href="#add-custom-css-to-html-head-section" id="markdown-toc-add-custom-css-to-html-head-section">Add Custom CSS to HTML &lt;head&gt; Section</a></li>
-  <li><a href="#add-custom-codes-to-html-head-section" id="markdown-toc-add-custom-codes-to-html-head-section">Add Custom Codes to HTML &lt;head&gt; Section</a></li>
-  <li><a href="#sidebar-options" id="markdown-toc-sidebar-options">Sidebar Options</a>    <ul>
-      <li><a href="#override-default-sidebar-setting-v20" id="markdown-toc-override-default-sidebar-setting-v20">Override Default Sidebar Setting <span class="badge badge-success">v2.0</span></a></li>
-      <li><a href="#options-for-resources-widget" id="markdown-toc-options-for-resources-widget">Options for Resources Widget</a>        <ul>
-          <li><a href="#display-github-metadata-for-project-repo" id="markdown-toc-display-github-metadata-for-project-repo">Display GitHub Metadata for Project Repo</a></li>
-          <li><a href="#display-download-buttons" id="markdown-toc-display-download-buttons">Display Download Buttons</a></li>
+  <li><a href="#useful-api-methods-and-properties" id="markdown-toc-useful-api-methods-and-properties">Useful API Methods and Properties</a>    <ul>
+      <li><a href="#using-windowname-property" id="markdown-toc-using-windowname-property">Using <code class="language-plaintext highlighter-rouge">window.name</code> Property</a></li>
+      <li><a href="#using-_iubcsapi-methods" id="markdown-toc-using-_iubcsapi-methods">Using <code class="language-plaintext highlighter-rouge">_iub.cs.api</code> Methods</a>        <ul>
+          <li><a href="#isconsentgiven" id="markdown-toc-isconsentgiven"><code class="language-plaintext highlighter-rouge">isConsentGiven()</code></a></li>
+          <li><a href="#getpreferences" id="markdown-toc-getpreferences"><code class="language-plaintext highlighter-rouge">getPreferences()</code></a></li>
+          <li><a href="#isgooglenonpersonalizedads" id="markdown-toc-isgooglenonpersonalizedads"><code class="language-plaintext highlighter-rouge">isGoogleNonPersonalizedAds()</code></a></li>
+          <li><a href="#printerrors" id="markdown-toc-printerrors"><code class="language-plaintext highlighter-rouge">printErrors()</code></a></li>
         </ul>
       </li>
+      <li><a href="#using-__tcfapi-function" id="markdown-toc-using-__tcfapi-function">Using <code class="language-plaintext highlighter-rouge">__tcfapi</code> Function</a></li>
     </ul>
   </li>
-  <li><a href="#on-page-seo" id="markdown-toc-on-page-seo">On-Page SEO</a></li>
-  <li><a href="#set-url-redirects" id="markdown-toc-set-url-redirects">Set URL Redirects</a></li>
-  <li><a href="#exclude-from-sitemap" id="markdown-toc-exclude-from-sitemap">Exclude from Sitemap</a></li>
-  <li><a href="#hide-consent-ui-on-specific-pages" id="markdown-toc-hide-consent-ui-on-specific-pages">Hide Consent UI on Specific Pages</a></li>
-  <li><a href="#see-also-" id="markdown-toc-see-also-">See Also 📚</a></li>
+  <li><a href="#additional-insights" id="markdown-toc-additional-insights">Additional Insights</a>    <ul>
+      <li><a href="#understanding-consent-purposes" id="markdown-toc-understanding-consent-purposes">Understanding Consent Purposes</a></li>
+      <li><a href="#testing-and-debugging-tips" id="markdown-toc-testing-and-debugging-tips">Testing and Debugging Tips</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+  <li><a href="#see-also" id="markdown-toc-see-also">See Also</a></li>
 </ul>
 
 <aside id="toc-skipped"></aside>
 
-<hr />
+<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
 
-<h2 id="general-front-matters-for-a-post">General Front Matters for A Post</h2>
+<h3 id="1-display-the-cookie-solution-iframe">1. Display the Cookie Solution iframe</h3>
 
-<p>A Jekyll post should contain the front matters as the following example:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
-<span class="na">permalink</span><span class="pi">:</span> <span class="s">/blog/my-first-post/</span>
-<span class="na">slug</span><span class="pi">:</span> <span class="s">index.html</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s">My first blog post</span>
-<span class="na">date</span><span class="pi">:</span> <span class="s">2020-01-31 07:30 +0000</span>
-<span class="na">last_modified_at</span><span class="pi">:</span> <span class="s">2024-01-16 12:01 +0800</span>
-<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">category1</span><span class="pi">,</span> <span class="nv">category2</span><span class="pi">]</span>
-<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">tag1</span><span class="pi">,</span> <span class="nv">tag2</span><span class="pi">,</span> <span class="nv">tag3</span><span class="pi">]</span>
-<span class="na">excerpt</span><span class="pi">:</span> <span class="s">This is the first blog post for my Jekyll site.</span>
-<span class="nn">---</span>
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">layout</code></td>
-      <td>The Jekyll layout file to use.<br /><em>Options:</em> <code class="language-plaintext plaintext highlighter-rouge">page</code>, <code class="language-plaintext plaintext highlighter-rouge">post</code>, <code class="language-plaintext plaintext highlighter-rouge">archive</code>, <code class="language-plaintext plaintext highlighter-rouge">category-list</code> and <code class="language-plaintext plaintext highlighter-rouge">tag-list</code>.<br /><strong>Note</strong>: <code class="language-plaintext plaintext highlighter-rouge">page-right-sidebar</code> and <code class="language-plaintext plaintext highlighter-rouge">post-left-sidebar</code> are deprecated.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">title</code></td>
-      <td>The title of the page or post.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">date</code></td>
-      <td>The date here overrides the date from the name of the post file.<br /><strong>Note</strong>: A date is specified in the format <code class="language-plaintext plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS +/-TTTT</code>; hours, minutes, seconds, and timezone offset are optional.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">last_modified_at</code></td>
-      <td>(<em>Optional</em>) The date when the post was the last modified.<br /><strong>Note</strong>: A date is specified in the format <code class="language-plaintext plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS +/-TTTT</code>; hours, minutes, seconds, and timezone offset are optional.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">permalink</code></td>
-      <td>(<em>Optional</em>) The custom URL for the page or post, if you need your processed blog post URLs to be something other than the site-wide style. <em>Default:</em> <code class="language-plaintext plaintext highlighter-rouge">/year/month/day/title.html</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">slug</code></td>
-      <td>(Optional) The custom name for the page or post file, if you need your processed blog post file names to be something other than the original name. Default: The original file name.<br /><strong>Note</strong>: If the <code class="language-plaintext highlighter-rouge">permalink</code> option is set to a string that ends with <code class="language-plaintext highlighter-rouge">/</code>, you need to set the slug option to <code class="language-plaintext highlighter-rouge">" "</code> or <code class="language-plaintext highlighter-rouge">index.html</code> to avoid generating an invalid URL for the site preview feature of Front Matter CMS.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">category</code></td>
-      <td>(<em>Optional</em>) One or multiple categories that the post belongs to.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">tags</code></td>
-      <td>(<em>Optional</em>) One or multiple tags that the post associates with.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">excerpt</code></td>
-      <td>(<em>Optional</em>) The short text to show on the card of the list/grid of posts, and use as the meta description of the page or post.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>💡 See:</strong> <a href="https://jekyllrb.com/docs/front-matter/" title="Official Jekyll Documentation">Front Matter | Jekyllrb</a></p>
-
-<hr />
-
-<h2 id="set-featured-image">Set Featured Image</h2>
-
-<p>You can assign an image (with <strong>730×431</strong> pixels in size) as the featured image of a post in the front matter like this:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-  <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/picture.png</span>
-</code></pre></div></div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">path</code></td>
-      <td>(<em>Required</em>) Absolute or relative path of a JPG, PNG, or SVG file.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">hide</code></td>
-      <td>(<em>Optional</em>) Set to <code class="language-plaintext plaintext highlighter-rouge">true</code> to not embed the image on the page.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">class</code></td>
-      <td>(<em>Optional</em>) Additional class names for the &lt;amp-img&gt; component, e.g. <code class="language-plaintext plaintext highlighter-rouge">shadow-none</code> to remove the box shallow.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">width</code></td>
-      <td>(<em>Optional</em>) Specify the image width (in px). <em>Default:</em> 730 (px).</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">height</code></td>
-      <td>(<em>Optional</em>) Specify the image height (in px). <em>Default:</em> 411 (px).</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">fit</code></td>
-      <td>(<em>Optional</em>) The horizontal alignment of the thumbnail in cards and post grid. <em>Options:</em> <code class="language-plaintext plaintext highlighter-rouge">left</code> / <code class="language-plaintext plaintext highlighter-rouge">right</code>.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><strong>Note</strong>: The front matter <code class="language-plaintext highlighter-rouge">image</code> also inherits the properties from <a href="https://github.com/jekyll/jekyll-feed#optional-front-matter">Jekyll Feed</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#customizing-image-output">Jekyll SEO Tag</a>.</p>
-
-<h3 id="hide-featured-image-on-a-post">Hide Featured Image on A Post</h3>
-
-<p>If you do not want to render the featured image on a post, append a <code class="language-plaintext highlighter-rouge">hide</code> option to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
-   <span class="na">hide</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div>
-
-<h3 id="remove-box-shadow-from-featured-image">Remove Box Shadow from Featured Image</h3>
-
-<p>If you want to remove the shadow of the featured image on a post, append the following class to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em></p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
-   <span class="na">class</span><span class="pi">:</span> <span class="s">shadow-none</span>
-</code></pre></div></div>
-
-<h3 id="featured-images-that-do-not-have-an-aspect-ratio-of-169">Featured Images That Do Not Have an Aspect Ratio of 16:9</h3>
-
-<p>If the image is not at 16:9 aspect ratio, you need to define its width and height under the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
-   <span class="na">width</span><span class="pi">:</span> <span class="m">640</span>
-   <span class="na">height</span><span class="pi">:</span> <span class="m">480</span>
-</code></pre></div></div>
-
-<h3 id="show-thumbnail-image-in-sidebar-widgets">Show Thumbnail Image in Sidebar Widgets</h3>
-
-<ol>
-  <li>Make a copy of each featured image file in the same folder.</li>
-  <li>Rename the copies to have a filename like <code class="language-plaintext highlighter-rouge">&lt;filename&gt;.thumb.&lt;ext&gt;</code>, <em>e.g.</em> <code class="language-plaintext highlighter-rouge">cover-image.thumb.png</code>.</li>
-  <li>Rescale it to a height of <strong>150px</strong>.</li>
-</ol>
-
-<p>By default, the thumbnail of featured images is cropped at the center inside the cards of the list/grid of Featured Posts. A new variable for the thumbnail positioning was added to the theme on 2020-10-07. You can now change the image position to the <em>left</em> or <em>right</em> by appending a <code class="language-plaintext highlighter-rouge">fit</code> option to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
-   <span class="na">fit</span><span class="pi">:</span> <span class="s">left</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="pin-featured-posts">Pin Featured Posts</h2>
-
-<p>You can pin a post to the list/grid of Featured Posts in the theme by the following front matter:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">featured</span><span class="pi">:</span> <span class="kc">true</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="add-custom-css-to-html-head-section">Add Custom CSS to HTML &lt;head&gt; Section</h2>
-
-<p>In the front matter, you can add your custom CSS styles to the end of the <code class="language-plaintext highlighter-rouge">&lt;style amp-custom&gt;</code> tag inside the HTML header.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">css</span><span class="pi">:</span>
-  <span class="na">badge</span><span class="pi">:</span> <span class="kc">true</span>  <span class="c1"># include Bootstrap 4 Badges styles</span>
-  <span class="na">syntax</span><span class="pi">:</span> <span class="kc">true</span> <span class="c1"># include CSS styles for syntax highlighter</span>
-  <span class="na">custom</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-    <span class="s"># Write custom CSS to here</span>
-</code></pre></div></div>
-
-<p>For example, you can format the table elements with a zebra-striped design by the following:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">css</span><span class="pi">:</span>
-  <span class="na">custom</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-    <span class="s">table { font-size: .95rem; margin-bottom: 1.5rem; }</span>
-    <span class="s">tr:nth-child(odd) { backgroud-color: #e3edf3; }</span>
-    <span class="s">th, td { padding: .5em; }</span>
-</code></pre></div></div>
-
-<p style="margin-bottom: auto;"><strong>💡 Learn more:</strong></p>
+<p>To start, you need to display the iubenda Cookie Solution iframe on your website:</p>
 
 <ul>
-  <li><a href="https://getbootstrap.com/docs/4.0/components/badge/" title="Bootstrap 4">Badges</a></li>
-  <li><a href="/amp-jekyll-theme-with-iubenda-consent/code/" title="AMP Affiliately Jekyll Theme">Code Block</a></li>
-  <li><a href="https://www.w3schools.com/howto/howto_css_table_zebra.asp" title="W3Schools">How To Create A Zebra Striped Table</a></li>
+  <li><strong>Use Incognito Mode:</strong> Open a new incognito or private browsing window in your browser to ensure that no previous cookies or consents interfere with your testing.</li>
+  <li><strong>Click the Floating Consent Button:</strong> If your site includes a floating consent button, click it to manually display the Cookie Solution iframe.</li>
 </ul>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">amp</span><span class="pi">:</span>
-  <span class="na">iframe</span><span class="pi">:</span> <span class="kc">true</span>   <span class="c1"># layout level</span>
-  <span class="na">script</span><span class="pi">:</span> <span class="kc">true</span>   <span class="c1"># layout level</span>
-  <span class="na">gist</span><span class="pi">:</span> <span class="kc">true</span>     <span class="c1"># page level</span>
-  <span class="na">youtube</span><span class="pi">:</span> <span class="kc">true</span>  <span class="c1"># page level</span>
-</code></pre></div></div>
+<h3 id="2-open-browser-developer-tools">2. Open Browser Developer Tools</h3>
 
-<p><strong>💡 Related:</strong> <a href="/amp-jekyll-theme-with-iubenda-consent/using-amp-youtube/" title="Using AMP YouTube Components">How to include YouTube Video and Playlist embeds</a></p>
-
-<hr />
-
-<h2 id="add-custom-codes-to-html-head-section">Add Custom Codes to HTML &lt;head&gt; Section</h2>
-
-<p>In the front matter, you can add your codes to the HTML header using the variable <code class="language-plaintext highlighter-rouge">custom_header</code>.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">custom_head</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-  <span class="s"># Custom meta tags and AMP script components in page level</span>
-</code></pre></div></div>
-
-<p>For example, you can specify additional meta tags and AMP components as the followings:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">custom_head</span><span class="pi">:</span> <span class="pi">&gt;-</span>
-  <span class="s">&lt;!-- Instructs web crawlers to not index the page and to not crawl any of the links on the page --&gt;</span>
-  <span class="s">&lt;meta name="robots" content="noindex, nofollow"&gt;</span>
-
-  <span class="s">&lt;!-- Includes the AMP JS library for &lt;amp-accordion&gt; component --&gt;</span>
-  <span class="s">&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</span>
-
-  <span class="s">&lt;!-- Includes the AMP JS library for &lt;amp-audio&gt; component --&gt;</span>
-  <span class="s">&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"&gt;&lt;/script&gt;</span>
-</code></pre></div></div>
-
-<p><strong>💡 Learn more</strong>: <a href="https://developers.google.com/search/docs/advanced/robots/robots_meta_tag" title="Google Search Central">Robots meta tag, data-nosnippet, and X-Robots-Tag specifications</a></p>
-
-<hr />
-
-<h2 id="sidebar-options">Sidebar Options</h2>
-
-<h3 id="override-default-sidebar-setting-v20">Override Default Sidebar Setting <span class="badge badge-success">v2.0</span></h3>
-
-<p><strong>Options:</strong> <code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">right</code>, and <code class="language-plaintext highlighter-rouge">none</code></p>
-
-<p>For example, you can set a left sidebar on a post by the following:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">sidebar</span><span class="pi">:</span> <span class="s">left</span>
-</code></pre></div></div>
-
-<h3 id="options-for-resources-widget">Options for Resources Widget</h3>
-
-<p>When using this theme for a GitHub project repository website, you can display buttons in the sidebar that link to the repository and a release file.</p>
-
-<p>Follow our <a href="/amp-jekyll-theme-with-iubenda-consent/config-guide/">Config Guide</a> to set up your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
-
-<h4 id="display-github-metadata-for-project-repo">Display GitHub Metadata for Project Repo</h4>
-
-<p>If a release exists in the repository, an additional button linking to the latest release webpage will be shown in the widget.</p>
-
-<p><strong>NOTE</strong>: Authentication is required to fetch your repository data to display the release button. Please follow the <a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md">jekyll/github-metadata</a> documentation to set up your personal access token.</p>
-
-<blockquote>
-  <p><span class="badge badge-success">v2.0</span>  <br />
-You can globally configure the widget using the <code class="language-plaintext highlighter-rouge">resources_widget</code> attribute in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. It is not necessary to set the front matter of individual pages to enable the widget.</p>
-
-  <p>Buttons for file downloads will display separately, and the “View on GitHub <i class="fab fa-github"></i>” button linking to the latest release webpage will no longer be overridden.</p>
-</blockquote>
-
-<h4 id="display-download-buttons">Display Download Buttons</h4>
-
-<blockquote class="quote-deprecated">
-  <p><span class="badge badge-default">v1.2</span> (Deprecated)  <br />
-A Download button appears on a page when you declare the URL of a download file in the front matter like this:</p>
-
-  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span>
-  <span class="na">url</span><span class="pi">:</span> <span class="s">//.../filename.zip</span>
-</code></pre></div>  </div>
-
-  <p>This button will replace the button linking to the latest release if GitHub metadata is also present in the widget.</p>
-</blockquote>
-
-<p><span class="badge badge-success">v2.0</span>  <br />
-The new version supports creating a list of buttons for multiple files on a page. You need to itemize the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">url</code> of each file in the front matter, for example:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span>
-  <span class="na">files</span><span class="pi">:</span>
-    <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">../training-01/labsheet.pdf</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">Lab Sheet</span>
-    <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">../training-01/lab-files.zip</span>
-      <span class="na">name</span><span class="pi">:</span> <span class="s">Lab Files</span>
-</code></pre></div></div>
-
-<hr />
-
-<h2 id="on-page-seo">On-Page SEO</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">canonical_url</code></td>
-      <td>(<em>Optional</em>) The custom <a href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls" title="Google Developers">Canonical URL</a> for the page or post.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">author</code></td>
-      <td>(<em>Optional</em>) The lookup key for author information to be propagated to JSON-LD structured data. See <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md">Jekyll SEO Tag</a>.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">description</code></td>
-      <td>(<em>Optional</em>) A brief summary of a web page to be shown in search engine results.<br /><strong>Note</strong>: This will takes priority over existing front matter attribute <code class="language-plaintext highlighter-rouge">excerpt</code>.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">locale</code></td>
-      <td>(<em>Optional</em>) The custom locale to override the site-level locale information for the page or post.</td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">image</code></td>
-      <td>(<em>Optional</em>) <strong>Note</strong>: This is inherited by the attribute for setting the <a href="#set-featured-image">featured image</a> for the page or post.</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>💡 Learn more from the <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md">basic usage</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md">advanced usage</a> in the Jekyll SEO Tag documentation.</p>
-
-<hr />
-
-<h2 id="set-url-redirects">Set URL Redirects</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Attribute</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">redirect_from</code></td>
-      <td>(<em>Optional</em>) One or multiple relative URLs that will redirect to the page or post, <em>e.g.</em> <code class="language-plaintext plaintext highlighter-rouge">/post/2019/10/31/index.html</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">redirect_to</code></td>
-      <td>(<em>Optional</em>) The destination URL of the redirection, <em>e.g.</em> <code class="language-plaintext plaintext highlighter-rouge">http://www.github.com</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<p>💡 Learn more about the usage from the <a href="https://github.com/jekyll/jekyll-redirect-from">Jekyll Redirect From</a> documentation.</p>
-
-<h2 id="exclude-from-sitemap">Exclude from Sitemap</h2>
-
-<p>If you would like to exclude specific pages/posts from the sitemap set the sitemap flag to false in the front matter for the page or post.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">sitemap</span><span class="pi">:</span> <span class="kc">false</span>
-</code></pre></div></div>
-
-<p>💡 Learn more from the <a href="https://github.com/jekyll/jekyll-sitemap#exclusions">Jekyll Sitemap Generator Plugin</a> documentation.</p>
-
-<hr />
-
-<h2 id="hide-consent-ui-on-specific-pages">Hide Consent UI on Specific Pages</h2>
-
-<p>The <code class="language-plaintext highlighter-rouge">consent_ui</code> front matter variable allows you to control the visibility of the AMP consent UI on a per-page basis. By setting this variable to <code class="language-plaintext highlighter-rouge">false</code>, you can hide the consent UI on specific pages where it is not necessary or desired, such as cookie policy pages or other informational pages.</p>
-
-<p>To hide the AMP consent UI on a specific page, add the <code class="language-plaintext highlighter-rouge">consent_ui</code> variable to the front matter of your Markdown files.</p>
-
-<p><strong>Example</strong>:</p>
-
-<p>Here’s an example of a Markdown file with the consent_ui variable:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
-<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Cookie</span><span class="nv"> </span><span class="s">Policy"</span>
-<span class="na">consent_ui</span><span class="pi">:</span> <span class="kc">false</span>
-<span class="nn">---</span>
-
-<span class="s">This page outlines the cookie policy for our website...</span>
-
-</code></pre></div></div>
-
-<p>By following these steps, you can easily control the visibility of the AMP consent UI on a per-page basis within your Jekyll theme.</p>
-
-<hr />
-
-<h2 id="see-also-">See Also 📚</h2>
+<p>Open your browser’s Developer Tools to inspect elements and run JavaScript commands:</p>
 
 <ul>
-  <li><a href="https://jekyllrb.com/docs/configuration/front-matter-defaults/" title="Official Jekyll Documentation">Front Matter Defaults | Jekyllrb</a></li>
-  <li><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/blob/master/README.md" title="GitHub">README.md - amp-affiliately-jekyll-theme</a></li>
-</ul>]]></content><author><name></name></author><category term="doc" /><category term="front matter" /><category term="styles" /><category term="AMP" /><summary type="html"><![CDATA[The docs for the front matters that that let you control the post title, date, featured image, CSS styles, etc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/frontend-4342425_730.png" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/frontend-4342425_730.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Granular User Consent Updates for v3.3.1</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/built-in-granular-user-consentamp-consent/" rel="alternate" type="text/html" title="Granular User Consent Updates for v3.3.1" /><published>2025-01-31T09:01:00+08:00</published><updated>2025-01-31T09:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/granular-user-consent-updates-for-v331</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/built-in-granular-user-consentamp-consent/"><![CDATA[<p>We’re excited to announce the release of version 3.3.1 of our AMP Jekyll Theme, which brings a major upgrade to our built-in granular user consent feature. This update makes it easier than ever by eliminating the need to calculate the script hash of custom JavaScript for each site domain and include it in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+  <li><strong>Google Chrome:</strong> Right-click anywhere on the page and select <strong>Inspect</strong>, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>.</li>
+  <li><strong>Mozilla Firefox:</strong> Right-click and choose <strong>Inspect Element</strong>, or press <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd>.</li>
+  <li><strong>Microsoft Edge:</strong> Right-click and select <strong>Inspect</strong>, or press <kbd>F12</kbd>.</li>
+</ul>
+
+<h3 id="3-inspect-the-iframe-element">3. Inspect the iframe Element</h3>
+
+<p>Within the Developer Tools:</p>
+
+<ul>
+  <li>Navigate to the <strong>Elements</strong> or <strong>Inspector</strong> tab.</li>
+  <li>Expand the DOM tree to locate the <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> element that contains the iubenda Cookie Solution.</li>
+  <li><strong>Tip:</strong> You can identify the iframe with the CSS selector <code class="language-plaintext highlighter-rouge">#iubenda &gt; iframe</code>.</li>
+</ul>
+
+<h3 id="4-invoke-api-methods-from-the-console">4. Invoke API Methods from the Console</h3>
+
+<p>With the iframe identified:</p>
+
+<ul>
+  <li>Switch to the <strong>Console</strong> tab in Developer Tools.</li>
+  <li>Make sure the console is executing within the context of the iframe. Some browsers provide a context selection dropdown. If not, you may need to adjust your commands to target the iframe appropriately.</li>
+</ul>
+
+<h2 id="useful-api-methods-and-properties">Useful API Methods and Properties</h2>
+
+<p>The browser and iubenda Cookie Solution APIs offer several methods to help you verify consent status and user preferences. Here are some key methods and properties you can utilize:</p>
+
+<h3 id="using-windowname-property">Using <code class="language-plaintext highlighter-rouge">window.name</code> Property</h3>
+
+<p>When <code class="language-plaintext highlighter-rouge">&lt;amp-consent&gt;</code> creates the iframe to embed the CMP’s prompt, it passes stored consent information from the main AMP page to the iframe. You can access this data using the <code class="language-plaintext highlighter-rouge">window.name</code> property inside the iframe.</p>
+
+<p><strong>Usage:</strong></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">info</span> <span class="o">=</span> <span class="nx">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Sample Output:</strong></p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"clientConfig"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"consentState"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"consentStateValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"rejected"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"consentMetadata"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"additionalConsent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1~XX..."</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"gdprApplies"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"consentString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"promptTrigger"</span><span class="p">:</span><span class="w"> </span><span class="s2">"action"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"isDirty"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"purposeConsents"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>With <code class="language-plaintext highlighter-rouge">window.name</code>, you can interpret how the CMP inside the iframe will react according to this initial state.</p>
+
+<p>For more details, refer to the <a href="https://github.com/ampproject/amphtml/blob/main/extensions/amp-consent/integrating-consent.md#client-information-passed-to-iframe">AMP Consent Integration Guide</a>.</p>
+
+<h3 id="using-_iubcsapi-methods">Using <code class="language-plaintext highlighter-rouge">_iub.cs.api</code> Methods</h3>
+
+<ul>
+  <li>
+    <h4 id="isconsentgiven"><code class="language-plaintext highlighter-rouge">isConsentGiven()</code></h4>
+
+    <p>Checks whether the user has given consent.</p>
+
+    <p><strong>Usage:</strong></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">_iub</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nf">isConsentGiven</span><span class="p">();</span>
+<span class="c1">// Returns: true if consent is given, false otherwise</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="getpreferences"><code class="language-plaintext highlighter-rouge">getPreferences()</code></h4>
+
+    <p>Retrieves detailed information about the user’s consent preferences.</p>
+
+    <p><strong>Usage:</strong></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">_iub</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nf">getPreferences</span><span class="p">();</span>
+<span class="c1">// Returns: An object containing consent details</span>
+</code></pre></div>    </div>
+
+    <p><strong>Sample Output:</strong></p>
+
+    <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd1234"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2023-10-15T10:30:25.123Z"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"purposes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"1"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"3"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"4"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tcfv2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gac"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1~xx...."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"ccpa"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1YY-"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gppString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"uspr"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"s"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"sh"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"adv"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>    </div>
+
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">id</code></strong>: A unique identifier for the consent instance.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">timestamp</code></strong>: The date and time when the consent was recorded.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">purposes</code></strong>: An object indicating consent (true/false) for each purpose by its ID.</li>
+    </ul>
+  </li>
+  <li>
+    <h4 id="isgooglenonpersonalizedads"><code class="language-plaintext highlighter-rouge">isGoogleNonPersonalizedAds()</code></h4>
+
+    <p>Determines whether Google should serve non-personalized ads based on the user’s consent.</p>
+
+    <p><strong>Usage:</strong></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">_iub</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nf">isGoogleNonPersonalizedAds</span><span class="p">();</span>
+<span class="c1">// Returns: true if only non-personalized ads should be served, false otherwise</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <h4 id="printerrors"><code class="language-plaintext highlighter-rouge">printErrors()</code></h4>
+
+    <p>Prints any errors related to the iubenda Privacy Controls and Cookie Solution in the browser console.</p>
+
+    <p><strong>Usage:</strong></p>
+
+    <div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">_iub</span><span class="p">.</span><span class="nx">cs</span><span class="p">.</span><span class="nx">api</span><span class="p">.</span><span class="nf">printErrors</span><span class="p">();</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h3 id="using-__tcfapi-function">Using <code class="language-plaintext highlighter-rouge">__tcfapi</code> Function</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">__tcfapi</code> function is a crucial tool that allows websites to interact with the Transparency and Consent Framework (TCF) and manage user consent according to the General Data Protection Regulation (GDPR) requirements.</p>
+
+<p>This function enables you to execute various commands related to user consent and transparency. For more detailed specifications, refer to the <a href="https://github.com/InteractiveAdvertisingBureau/GDPR-Transparency-and-Consent-Framework/blob/master/TCFv2/IAB%20Tech%20Lab%20-%20CMP%20API%20v2.md">IAB Tech Lab - CMP API v2 Documentation</a>. For more insights on how iubenda CMP implements TCF, refer to the <a href="https://www.iubenda.com/en/help/7440-the-complete-guide-to-iubenda-cmp-and-iab-tcf-2-2#collect-consent-to-ad-personalization">Complete Guide to iubenda CMP and IAB TCF 2.2</a>.</p>
+
+<p><strong>Example Usage:</strong></p>
+
+<p>To access the <code class="language-plaintext highlighter-rouge">TCData</code> object, use the <code class="language-plaintext highlighter-rouge">__tcfapi</code> function with the <code class="language-plaintext highlighter-rouge">getTCData</code> command as shown below:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">__tcfapi</span><span class="p">(</span><span class="dl">'</span><span class="s1">getTCData</span><span class="dl">'</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">result</span><span class="p">,</span> <span class="nx">success</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">result</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><strong>Sample Output:</strong></p>
+
+<p>When you call the <code class="language-plaintext highlighter-rouge">getTCData</code> command, you might receive a response like this:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"addtlConsent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1~XX..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cmpId"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cmpStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"loaded"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"cmpVersion"</span><span class="p">:</span><span class="w"> </span><span class="mi">123</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"eventStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"cmpuishown"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"gdprApplies"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"isServiceSpecific"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"listenerId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"publisher"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"publisherCC"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AA"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"purpose"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"purposeOneTreatment"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"specialFeatureOptins"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">},</span><span class="w">
+  </span><span class="nl">"tcString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"tcfPolicyVersion"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"useNonStandardStacks"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"vendor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="err">...</span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<p>By using the <code class="language-plaintext highlighter-rouge">__tcfapi</code> function, you can effectively verify user consent within your website, ensuring compliance with GDPR and other privacy regulations.</p>
+
+<h2 id="additional-insights">Additional Insights</h2>
+
+<h3 id="understanding-consent-purposes">Understanding Consent Purposes</h3>
+
+<p>The <code class="language-plaintext highlighter-rouge">purposes</code> object in the consent preferences contains keys that represent various consent categories. Grasping these categories allows you to tailor your website’s content and functionality according to user preferences.</p>
+
+<p><strong>Purpose IDs Mapping:</strong></p>
+
+<ol>
+  <li>Necessary (ID <code class="language-plaintext highlighter-rouge">1</code>)</li>
+  <li>Functionality (ID <code class="language-plaintext highlighter-rouge">2</code>)</li>
+  <li>Experience (ID <code class="language-plaintext highlighter-rouge">3</code>)</li>
+  <li>Measurement (ID <code class="language-plaintext highlighter-rouge">4</code>)</li>
+  <li>Marketing (ID <code class="language-plaintext highlighter-rouge">5</code>)</li>
+</ol>
+
+<p>Understanding these purposes helps you respect user choices and adjust your site’s features accordingly. For more details, refer to the <a href="https://www.iubenda.com/en/help/1205-how-to-configure-your-cookie-solution-advanced-guide#per-category-consent">iubenda Advanced Guide</a>.</p>
+
+<h3 id="testing-and-debugging-tips">Testing and Debugging Tips</h3>
+
+<ul>
+  <li><strong>Clear Cookies:</strong> Before each test, clear your browser’s cookies or use incognito mode to reset the consent status.</li>
+  <li><strong>Check for Errors:</strong> Use <code class="language-plaintext highlighter-rouge">printErrors()</code> to display any errors in the console and monitor for JavaScript issues that might affect API method calls.</li>
+  <li><strong>Verify Across Devices:</strong> Test on various browsers and devices to ensure consistent behavior and compatibility.</li>
+</ul>
+
+<h2 id="references">References</h2>
+
+<ul>
+  <li>
+    <p><strong>iubenda Advanced Configuration Guide</strong><br />
+<a href="https://www.iubenda.com/en/help/1205-how-to-configure-your-cookie-solution-advanced-guide">How to Configure Your Cookie Solution - Advanced Guide</a></p>
+  </li>
+  <li>
+    <p><strong>Invoking API Methods from an iframe</strong><br />
+<a href="https://www.iubenda.com/en/help/23633-how-to-invoke-cookie-solution-api-methods-from-an-iframe">How to Invoke Cookie Solution API Methods from an iframe</a></p>
+  </li>
+  <li>
+    <p><strong>CodePen Example</strong>
+<a href="https://codepen.io/iubenda/pen/WNGmeyv?editors=1000">iubenda API Methods in Action</a></p>
+  </li>
+</ul>
+
+<p>By thoroughly verifying the iubenda Cookie Solution using this tools, you’re taking proactive steps toward compliance and demonstrating a commitment to user privacy. Continuously refining your implementation will help provide the best experience possible for your users.</p>
+
+<h2 id="see-also">See Also</h2>
+
+<ul>
+  <li><a href="/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/">Introducing iubenda AMP Cookie Solution for v3.3.0</a></li>
+</ul>]]></content><author><name></name></author><category term="doc" /><category term="AMP" /><category term="iubenda" /><category term="Cookie Consent" /><category term="TCF" /><summary type="html"><![CDATA[Learn how to verify the iubenda Cookie Solution on AMP pages for compliance and user experience with this step-by-step guide.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-magnify-5118694.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-magnify-5118694.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Granular User Consent Updates for v3.3.1</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/built-in-granular-user-consentamp-consent/" rel="alternate" type="text/html" title="Granular User Consent Updates for v3.3.1" /><published>2025-01-31T09:01:00+08:00</published><updated>2025-01-31T09:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/granular-user-consent-updates-for-v331</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/built-in-granular-user-consentamp-consent/"><![CDATA[<p>We’re excited to announce the release of version 3.3.1 of our AMP Jekyll Theme, which brings a major upgrade to our built-in granular user consent feature. This update makes it easier than ever by eliminating the need to calculate the script hash of custom JavaScript for each site domain and include it in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
 
 <h3 id="key-improvements">Key Improvements</h3>
 
@@ -559,7 +419,13 @@ The new version supports creating a list of buttons for multiple files on a page
   <li><a href="https://amp.dev/documentation/components/websites/amp-consent">Documentation: &lt;amp-consent&gt; - amp.dev</a></li>
   <li><a href="https://amp.dev/documentation/examples/user-consent/client_side_user_consent_flow/">Example: Client Side User Consent Flow - amp.dev</a></li>
   <li><a href="https://amp.dev/documentation/examples/user-consent/granular_user_consent/">Example: Granular User Consent - amp.dev</a></li>
-</ul>]]></content><author><name></name></author><category term="feature" /><category term="AMP" /><category term="Cookie Consent" /><summary type="html"><![CDATA[Upgrade your AMP Jekyll Theme with version 3.3.1! Enjoy simplified granular user consent, faster loading times, and seamless performance across all devices. 🚀]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/built-in-granular-cookie-consent-banner_cover.png" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/built-in-granular-cookie-consent-banner_cover.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducing iubenda AMP Cookie Solution in Version 3.3.0</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/" rel="alternate" type="text/html" title="Introducing iubenda AMP Cookie Solution in Version 3.3.0" /><published>2025-01-23T17:01:00+08:00</published><updated>2025-01-23T17:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/"><![CDATA[<p>We’re excited to introduce a new consent banner option with the <a href="https://iubenda.refr.cc/default/u/fumikr?s=sp&amp;t=cp">iubenda Privacy Controls and Cookie Solution</a> in version <code class="language-plaintext badge badge-success highlighter-rouge">3.3.0</code> of our Jekyll theme. This update integrates the <a href="https://www.iubenda.com/en/help/22135-cookie-solution-amp-wordpress">iubenda cookie consent on AMP pages</a>, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.</p>
+</ul>
+
+<h2 id="see-also">See Also</h2>
+
+<ul>
+  <li><a href="/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/">Introducing iubenda AMP Cookie Solution for v3.3.0</a></li>
+</ul>]]></content><author><name></name></author><category term="feature" /><category term="AMP" /><category term="Cookie Consent" /><summary type="html"><![CDATA[Upgrade your AMP Jekyll Theme with version 3.3.1! Enjoy simplified granular user consent, faster loading times, and seamless performance across all devices. 🚀]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766-purple.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766-purple.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Introducing iubenda AMP Cookie Solution in Version 3.3.0</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/" rel="alternate" type="text/html" title="Introducing iubenda AMP Cookie Solution in Version 3.3.0" /><published>2025-01-23T17:01:00+08:00</published><updated>2025-01-23T17:01:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/"><![CDATA[<p>We’re excited to introduce a new consent banner option with the <a href="https://iubenda.refr.cc/default/u/fumikr?s=sp&amp;t=cp">iubenda Privacy Controls and Cookie Solution</a> in version <code class="language-plaintext badge badge-success highlighter-rouge">3.3.0</code> of our Jekyll theme. This update integrates the <a href="https://www.iubenda.com/en/help/22135-cookie-solution-amp-wordpress">iubenda cookie consent on AMP pages</a>, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.</p>
 
 <h2 id="key-benefits">Key Benefits</h2>
 
@@ -629,7 +495,14 @@ The new version supports creating a list of buttons for multiple files on a page
 
 <h2 id="support">Support</h2>
 
-<p>For any issues or questions, please report bugs and issues on <a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/issues">our GitHub repository</a>. We appreciate your contributions and feedback!</p>]]></content><author><name></name></author><category term="feature" /><category term="AMP" /><category term="Cookie Consent" /><summary type="html"><![CDATA[We’re excited to introduce a new consent banner option with the iubenda Privacy Controls and Cookie Solution in version 3.3.0 of our Jekyll theme. This update integrates the iubenda cookie consent on AMP pages, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Using Front Matter CMS</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-cms/" rel="alternate" type="text/html" title="Using Front Matter CMS" /><published>2024-11-25T13:11:00+08:00</published><updated>2024-11-27T21:11:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/vscode-front-matter</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-cms/"><![CDATA[<aside style="position: relative;">
+<p>For any issues or questions, please report bugs and issues on <a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/issues">our GitHub repository</a>. We appreciate your contributions and feedback!</p>
+
+<h2 id="see-also">See Also</h2>
+
+<ul>
+  <li><a href="/amp-jekyll-theme-with-iubenda-consent/verifying-iubenda-cookie-solution-amp/">Granular User Consent Updates for v3.3.1</a></li>
+  <li><a href="/amp-jekyll-theme-with-iubenda-consent/verifying-iubenda-cookie-solution-amp/">Verifying iubenda Cookie Solution on AMP Pages</a></li>
+</ul>]]></content><author><name></name></author><category term="feature" /><category term="AMP" /><category term="iubenda" /><category term="Cookie Consent" /><summary type="html"><![CDATA[We’re excited to introduce a new consent banner option with the iubenda Privacy Controls and Cookie Solution in version 3.3.0 of our Jekyll theme. This update integrates the iubenda cookie consent on AMP pages, delivering a seamless and compliant user consent experience. As a Google-certified CMP, it offers a reliable alternative to our self-developed consent interface, ensuring full compliance and reliability.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/assets/images/cookie-6116766.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Using Front Matter CMS</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-cms/" rel="alternate" type="text/html" title="Using Front Matter CMS" /><published>2024-11-25T13:11:00+08:00</published><updated>2024-11-27T21:11:00+08:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/vscode-front-matter</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-iubenda-consent/front-matter-cms/"><![CDATA[<aside style="position: relative;">
     <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
 </aside>
 
@@ -1260,6 +1133,7 @@ The new version supports creating a list of buttons for multiple files on a page
 <ul>
   <li>Example Video 1:
     <amp-youtube id="yt-8jumRGDgxiY" width="480" height="270" layout="responsive" data-block-on-consent-purposes="1,3" credentials="omit" data-videoid="8jumRGDgxiY" title="GSP319 Build a Website on Google Cloud: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-title="GSP319 Build a Website on Google Cloud: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-url="https://www.youtube.com/watch?v=8jumRGDgxiY" data-param-rel="0">
+<amp-img src="https://i.ytimg.com/vi/8jumRGDgxiY/mqdefault.jpg" placeholder="" layout="fill" />
 <div fallback="">
   <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=8jumRGDgxiY" rel="noopener" target="_blank">Watch on YouTube</a></p>
 </div>
@@ -1267,6 +1141,7 @@ The new version supports creating a list of buttons for multiple files on a page
   </li>
   <li>Example Vdieo 2:
     <amp-youtube id="yt-hkVAY9B0oOI" width="480" height="270" layout="responsive" data-block-on-consent-purposes="1,3" credentials="omit" data-videoid="hkVAY9B0oOI" title="GSP346 Exploring Data with Looker: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-title="GSP346 Exploring Data with Looker: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-url="https://www.youtube.com/watch?v=hkVAY9B0oOI" data-param-rel="0">
+<amp-img src="https://i.ytimg.com/vi/hkVAY9B0oOI/mqdefault.jpg" placeholder="" layout="fill" />
 <div fallback="">
   <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=hkVAY9B0oOI" rel="noopener" target="_blank">Watch on YouTube</a></p>
 </div>
@@ -1286,6 +1161,7 @@ The new version supports creating a list of buttons for multiple files on a page
     <p>Example Playlist:</p>
 
     <amp-youtube id="yt-C49jYtIMAsg" width="480" height="270" layout="responsive" data-block-on-consent-purposes="1,3" credentials="omit" data-videoid="C49jYtIMAsg" data-param-listType="playlist" data-param-list="PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" title="Demos of Qwiklabs Challenge Labs - YouTube" data-vars-video-title="Demos of Qwiklabs Challenge Labs - YouTube" data-vars-video-url="https://www.youtube.com/watch?v=C49jYtIMAsg&amp;list=PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" data-param-rel="0">
+<amp-img src="https://i.ytimg.com/vi/C49jYtIMAsg/mqdefault.jpg" placeholder="" layout="fill" />
 <div fallback="">
   <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=C49jYtIMAsg&amp;list=PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" rel="noopener" target="_blank">Watch on YouTube</a></p>
 </div>
@@ -2368,11 +2244,13 @@ The following options provide the granular control to those menu items:</p>
 
 <p><strong>Note:</strong> This implementation represents a basic privacy practice and does not fulfill GDPR compliance requirements.</p>
 
+<p>For more details, check out the <a href="/amp-jekyll-theme-with-iubenda-consent/verifying-iubenda-cookie-solution-amp/">Granular User Consent Updates for v3.3.1</a> page.</p>
+
 <h4 id="iubenda-cookie-consent">Iubenda Cookie Consent <span class="badge badge-success">v3.3</span></h4>
 
 <p>Integrates the Google-certified Consent Management Platform (CMP), crucial for GDPR and privacy compliance. Supports the Transparency and Consent Framework (TCF) and Accelerated Mobile Pages (AMP), offering customizable consent options and an optimized user interface. By incorporating this solution, you ensure industry-standard compliance and enhance user trust, vital for modern websites.</p>
 
-<p>For more information, refer to our detailed guide on <a href="/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/">Introducing iubenda AMP Cookie Solution</a>.</p>
+<p>For more information, visit the <a href="/amp-jekyll-theme-with-iubenda-consent/introducing-iubenda-amp-cookie-solution/">Introducing iubenda AMP Cookie Solution</a> page.</p>
 
 <table>
   <thead>
